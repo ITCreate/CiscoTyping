@@ -1,0 +1,35 @@
+<head>
+
+	<style>
+	#image_layer {
+		position: absolute;
+		background-color: red;
+		z-index: 0;
+	}
+
+	#string_layer {
+		position: absolute;	
+		z-index: 10;
+	}
+</style>
+</head>
+
+
+<div id="typemode_wrap">
+	<!-- ここからゲーム画面要素 ゲーム画面 -->
+	<!-- コマンドタイピングモード -->
+	<canvas id="image_layer" width="800" height="450"></canvas>
+	<canvas id="string_layer" width="800" height="450"></canvas>
+
+	<div id="command_typing_game">
+		<p style="font-size: 20px; color: RED;">コマンドタイピング画面</p>
+		<button  id="button" onclick="Next_Q()">Next</button>
+		<p style="font-size: 20px;">意味：<span id="meaning">first</span></p>
+		<p style="font-size: 20px;">入力する文字： <span id="quiz" style="font-size: 20px;">first</span></p>
+		<p style="font-size: 20px;">key input      :<span  id="result" style="font-size: 20px;"></span></p>
+		<p style="font-size: 20px;">合否: <span id="yn" style="font-size: 20px;"></span></p>
+		<p style="font-size: 20px;">タイム: <span id="time" style="font-size: 20px;">0</span></p>
+
+	</div>
+
+</div>

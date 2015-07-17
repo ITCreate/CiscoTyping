@@ -1,0 +1,64 @@
+<style>
+.first_baddy_block {
+	-webkit-transform : scale(2,2);
+}
+
+.first_baddy_block:hover{
+	cursor : pointer;
+}
+
+span {
+	font-size: 24px;
+	font-family:'monospace','Small Fonts',monospace;
+	text-shadow: 2px 2px 2px #999;
+}
+</style>
+<script type="text/javascript">
+function send_a_baddy(value){
+	var player_id = document.getElementById("player_id_tb").value;
+	alert(player_id);
+	PHP_Reception['id'] = player_id;
+	PHP_Reception['baddy'] = value;
+
+    var param = {
+    	"id" : player_id,
+    	"baddy" : value
+    };
+
+    //ajaxでの送信
+	$.ajax({
+		type: "post",
+		url: "../HTML/php/first_registration.php",
+		data: JSON.stringify(param),
+		crossDomain: false,
+		dataType : "jsonp",
+		scriptCharset: 'utf-8',
+	}).done(function(data){
+		alert(data);
+		load_html('./index.html');
+
+		//$("#sousin").css("display","inline");
+	}).fail(function(XMLHttpRequest, textStatus, errorThrown){
+		alert(errorThrown);
+		//$("#sousin").css("display","inline");
+	});	
+}
+</script>
+<div id="choise_baddy">
+	<div id="a">
+		<!-- ロゴ -->
+		<div id="titlelogo">Select Your Baddy</div>
+
+		<table border="5" align="center" valign="top">
+			<tr>
+				<td width="150px" height="150px" align="center"><img src="../image/monster/0.png" class="first_baddy_block" onclick="send_a_baddy(0)"/></td>
+				<td width="150px" height="150px" align="center"><img src="../image/monster/1.png" class="first_baddy_block" onclick="send_a_baddy(1)"/></td>
+				<td width="150px" height="150px" align="center"><img src="../image/monster/2.png" class="first_baddy_block" onclick="send_a_baddy(2)"/></td>
+			</tr>
+		</table>
+
+		<div align="center">
+			<span>Your Name</span><br/>
+			<input type="text" id="player_id_tb" size="16" maxlength="8" value="Guest" style="text-align:center;"/>
+		</div>
+</div>

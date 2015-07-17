@@ -1,0 +1,275 @@
+/*  ------------  ここから共通のCSS  ------------  */
+
+/*全体画面*/
+body {
+	height: 100%;
+	width: 100%;
+}
+
+/*全体のゲーム画面*/
+#gameframe {
+	width: 800px;
+	height: 450px;
+	margin: 0 auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+    background: -webkit-radial-gradient(center,#fff, #001);
+	opacity: 0.9;
+}
+
+/*各メニューボタン部分*/
+.menubar {
+	width: 300px;
+	margin: 0px 0px;
+	padding: 10px 0px;
+	margin-bottom: 30px;
+	text-align: center;
+	border: 5px ridge #899;
+	background-color: transparent;
+	font-size: 30px;
+	cursor: pointer;
+	border-radius: 20px;
+	font-family: cursive;
+	text-shadow: 0 3px 3px #fff;
+}
+
+/*各メニューボタン部分オンカーソル時イベント*/
+.menubar:hover{
+	transition: 1s;
+	color: #428;
+	background-color:#fff;
+	opacity: 0.9;
+}
+
+/*タイトル部分から下の部分全体*/
+#index_menubar_wrap{
+	padding: 20px;
+}
+
+#study_modeselect_wrap{
+
+}
+
+#modeselect_menubar_wrap{
+	margin-top:30px;	
+}
+
+/*  ------------  ここまで共通のCSS  ------------  */
+
+
+
+
+/*  ------------  ここからTop pageのCSS  ------------  */
+
+/*上部タイトル部分*/
+#titlelogo {
+	text-align: center;
+	font-size: 70px;
+	font-family:'monospace','Small Fonts',monospace;
+	text-shadow: 5px 5px 5px #999;
+}
+
+/*吹き出し部分*/
+.arrow_box {
+	height:30px;
+	width:180px;
+	display:none;
+	margin-left:325px;
+	margin-top:-95px;
+	position: absolute;
+	padding: 16px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	background: -webkit-radial-gradient(center,#bbb, #333);
+	color: #000;
+	text-shadow: 4px 4px 4px #999;
+	font-weight:bold;
+	font-family: "ヒラギノ明朝 Pro","Hiragino Mincho Pro";
+}
+
+
+/*吹き出し三角部分*/
+.arrow_box:after {
+	position: absolute;
+	bottom: 0%;
+	right: 95%;
+	width: 0;
+	height: 0;
+	margin-left: -10px;
+	border: solid transparent;
+	border-color: rgba(51, 51, 51, 0);
+	border-bottom-color: #334;
+	border-width: 10px;
+	pointer-events: none;
+	content: " ";
+}
+
+/*吹き出し出現イベント*/
+.menubar:hover + p.arrow_box {
+  display: block;
+}
+
+/*  ------------  ここまでTop PageのCSS  ------------  */
+
+
+
+
+/*  ------------  ここからGame ModeのCSS  ------------  */
+
+/*上部タイトル部分*/
+#modeselect_logo{
+	margin-bottom: 70px;
+	text-align: center;
+	font-size: 70px;
+	font-family:'monospace','Small Fonts',monospace;
+	text-shadow: 5px 5px 5px #999;
+}
+
+/*戻るボタン*/
+.menubar_back1 {
+	width: 55px;
+	margin-top: -110px;
+	margin-left: 730px;
+	text-align: center;
+	border: 5px ridge #899;
+    background:transparent;
+	font-size: 40px;
+	cursor: pointer;
+	border-radius: 300px;
+	font-family: cursive;
+	text-shadow: 0 3px 3px #fff;
+}
+
+/*戻るボタンオンカーソル時イベント*/
+.menubar_back1:hover{
+	transition: 1s;
+	color: #428;
+	background-color:#fff;
+	opacity: 0.9;
+}
+
+/*  ------------  ここまでGame ModeのCSS  ------------  */
+
+
+
+
+
+/*  ------------  ここからStudy modeのCSS  ------------  */
+
+/*上部タイトル部分*/
+.command_logo{
+	font-size:50px;
+	font-family:'Small Fonts',monospace;
+	text-shadow: 5px 5px 5px #999;
+}
+
+/*戻るボタン部分オンカーソル時イベント*/
+.menubar_back:hover{
+	transition: 1s;
+	color: #428;
+	background: -webkit-radial-gradient(center,#72e, #001);
+	opacity: 0.9;
+}
+
+/*戻るボタン*/
+.menubar_back {
+	width: 55px;
+	margin-top:-55px;
+	margin-left: 730px;
+	text-align: center;
+	border: 5px ridge #899;
+    background: -webkit-radial-gradient(center,#72e, #001);
+	font-size: 40px;
+	cursor: pointer;
+	border-radius: 500px;
+	font-family: cursive;
+	text-shadow: 0 3px 3px #fff;
+}
+
+/*コマンド表コマンド名*/
+.command_name{
+	text-align: center;
+}
+
+/*コマンド表コマンド意味*/
+.command_mean{
+	text-align: center;
+}
+
+/*コマンド表コマンド実用例*/
+.example_action{
+	text-align: center;
+}
+
+ /*全体の枠。ここにヘッダを格納 */
+#out_Div {
+  position: relative;
+  padding-top: 26px; 
+  width: 800px; 
+  border: 1px solid #0099cc; 	
+  background: -webkit-radial-gradient(center,#858, #333);
+   }
+
+/*スクロール対象コマンド表要素*/
+#in_Div {
+  overflow: auto; 
+  height:300px;
+}
+
+/* ヘッダ部分固定*/
+ #sclTbl thead tr {
+  position: absolute; 
+  top: 0px; 
+  left: 0px; 
+  background: -webkit-radial-gradient(center,#72e, #001);
+   }
+
+/*コマンド表要素*/
+#sclTbl tbody td{
+	padding: 15px;
+	border:solid 1px;
+	border-collapse: collapse;
+}
+
+/*コマンド表オンカーソル時イベント*/
+#sclTbl tbody td:hover{
+	background-color: #659;
+}
+
+/* ヘッダ部分列幅指定 */
+.coL0 { width: 100px; }
+.coL1 { width: 450px; }
+.coL2 { width: 250px; }
+
+/*  ------------  ここまでStudy modeのCSS  ------------  */
+
+/*  ------------  ここから別CSS  ------------  */
+.menubar_back3{
+	width: 55px;
+	margin-top: 10px;
+	margin-left: 720px;
+	text-align: center;
+	border: 5px ridge #899;
+    background: -webkit-radial-gradient(center,#72e, #001);
+	font-size: 40px;
+	cursor: pointer;
+	border-radius: 500px;
+	font-family: cursive;
+	text-shadow: 0 3px 3px #fff;
+}
+
+.menubar_back3:hover{
+	transition: 1s;
+	color: #428;
+	background: -webkit-radial-gradient(center,#72e, #001);
+	opacity: 0.9;
+}
+
+
+#studymode:hover{
+
+}
+.command_typing_game{
+	background-color:red;
+}

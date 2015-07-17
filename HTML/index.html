@@ -1,0 +1,57 @@
+<!-- ここからindex画面 -->
+<div id="index_wrap">
+	<div id="index_menubar_wrap">
+		<!-- ロゴ -->
+		<div id="titlelogo">Cisco Command Typing </div>
+
+		<!-- ここから選択ボタン -->
+		<div id="typemode" class="menubar" onclick="menu_switch(this, 'modeselect_wrap')">Game Mode</div>
+		<p class="arrow_box">ゲームモード画面の選択を行います</p>
+
+		<div id="studymode" class="menubar" onclick="gototyping('gamepage/study.html')">Study Mode</div>
+		<p class="arrow_box">コマンド一覧で学習を行います</p>
+
+		<div id="config" class="menubar" onclick="menu_switch(this, 'information_wrap')">Setting</div>
+		<p class="arrow_box">音量、難易度などの設定を行います</p>
+		<!-- ここまで選択ボタン -->
+	</div>
+</div>
+
+<!-- ここからゲームモード選択 -->
+<div id="modeselect_wrap" style="display: none">
+	<div id="modeselect_menubar_wrap">
+		<!-- ロゴ -->
+		<div id="modeselect_logo">Game Mode Select </div>
+
+		<!-- 戻るボタン -->
+		<div class="menubar_back1" onclick="menu_switch(this, 'index_wrap')">←</div>
+
+		<!-- ここから選択ボタン -->
+		<div id="gotogame_T" class="menubar" onclick="gototyping('gamepage/CtoC_mode.php')">Survival</div>
+		<p class="arrow_box">一人用のキャンペーンモードです</p>
+
+		<div id="gotogame_S" class="menubar" onclick="load_html('gacha.html')">Battle Mode</div>
+		<p class="arrow_box">オンライン上のプレイヤーと対戦できます</p>
+
+		<div id="gotogame_W" class="menubar" onclick="gototyping('farm.php')">Farm</div>
+		<p class="arrow_box">バディたちの様子を見ることができます</p>
+		<!-- ここまで選択ボタン -->
+	</div>
+</div>
+	
+<!-- スタディタイピングモード -->
+<div id="study_typing_game" style="display: none">
+	<p>スタディタイピング画面ですね</p>
+</div>
+
+<!-- Weakポイント -->
+<div id="weak_point" style="display: none">
+	<p>ウィークポイント画面</p>
+</div>
+		
+<!-- ここからセッティング -->
+<div id="information_wrap" style="display: none">
+	<div id="information_menubar_wrap">
+		<div id="4" class="menubar_back3" onclick="menu_switch(this, 'index_wrap')">←</div>
+	</div>
+</div>

@@ -61,7 +61,8 @@ this.name = name;
 
   root.init = function(){
       try{
-        root.context = new webkitAudioContext();
+        var s = window.AudioContext || window.webkitAudioContext
+        root.context = new s
         //alert("initiarize complete.");
       }
       catch(e){
@@ -149,7 +150,8 @@ function WebAudioAPI_kai(){
 
   root.init = function(){
       try{
-        root.context = new webkitAudioContext();
+        root.context  = window.AudioContext || window.webkitAudioContext
+        
         root.request = new XMLHttpRequest(); //この　XMLHttpRequestが音楽データを取得するメソッドとなる
         //alert("initiarize complete.");
       }
@@ -171,7 +173,8 @@ function WebAudioAPI_kai(){
     //request()が読まれた時
     //取得した音源をAudioContextを用いてデコードし、AudioBufferNodeを生成する
     root.request.onload = function() {
-      base.context.decodeAudioData(base.request.response, function(buffer) {//decodeAudioDataが完了したらコールバック関数として実行される
+      var audioCtx = new base.context;
+      audioCtx.decodeAudioData(base.request.response).then(function(buffer) {//decodeAudioDataが完了したらコールバック関数として実行される
           base.dogBarkingBuffer[base.count] = buffer;
           base.count++;
           if(base.count === base.preload_que.length){
